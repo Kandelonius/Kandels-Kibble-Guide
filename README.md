@@ -10,6 +10,7 @@
 
 ### adult dogs should consume 18-25% protein
 
+
 ## Avoid!!!
 
 ### Xylitol, Avocado, Alcohol, Onions and Garlic, sources of Caffeine ie Coffee Tea Chocolate, Grapes and Raisins
@@ -17,3 +18,14 @@
 ### Milk and Dairy, Macadamia Nuts, Bones, Persimmons, Peaches, Plums, Raw Eggs, Raw Meat and Fish, Salt, Sugary foods
 
 ### Human Medicines, Yeast Dough
+
+
+### BARF (Bone and Raw Food or Biologically Appropriate Raw Food)
+
+### Ultimate Diet
+
+### Volhard Diet
+
+## Dog nutrition calculations
+
+### 
