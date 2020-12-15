@@ -20,6 +20,8 @@
 ### Human Medicines, Yeast Dough
 
 
+## Types of homemade diet
+
 ### BARF (Bone and Raw Food or Biologically Appropriate Raw Food)
 
 ### Ultimate Diet
@@ -28,4 +30,11 @@
 
 ## Dog nutrition calculations
 
-### 
+### to maintain current weight, 2% - 3% of weight in food
+
+### puppies and kittens 2% - 3% of adult weight until 6 months of age
+
+### two meals daily from 6 months to 1 year
+
+### for over 1 year 1 meal per day for dogs, 2 meals daily for cats
+
