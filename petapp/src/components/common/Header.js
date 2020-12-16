@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
-// import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Header = () => {
-  return (
-    <nav className="navbar">
-      <h1>Kandel's Kibbles</h1>
-        <div
-        />
-    </nav>
-  );
+    return (
+        <nav className="navbar">
+            <h1>Kandel's Kibbles</h1>
+            <NavLink to="/">Home</NavLink>
+        </nav>
+    );
 };
 
 export default Header;
