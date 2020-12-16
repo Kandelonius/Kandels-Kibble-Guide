@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react';
+// import { Link } from 'react-router-dom';
 
-export default function Header() {
-    return (
-        <div>
+const Header = () => {
+  return (
+    <nav className="navbar">
+      <h1>Kandel's Kibbles</h1>
+        <div
+        />
+    </nav>
+  );
+};
 
-        </div>
-    )
-}
+export default Header;
