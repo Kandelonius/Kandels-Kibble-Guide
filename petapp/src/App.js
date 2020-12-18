@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import './App.css';
 import { Route } from 'react-router-dom';
 import Header from './components/common/Header';
+import "./App.css";
 
 function App() {
   return (
-    <Route className="App">
+    <div className="App" >
       <Header />
-    </Route>
+    </div>
   );
 }
 
