@@ -4,7 +4,7 @@ import pets from '../images/cat-and-dog-home.jpg';
 
 const Header = () => {
     return (
-        <header className="navbar" style={{ backgroundColor: 'dodgerBlue' }}>
+        <header className="navbar" style={{ backgroundColor: '#8AA69F' }}>
             <h1>Kandel's Kibbles</h1>
             <div class="navLinks">
                 <NavLink to="/">Home</NavLink>
