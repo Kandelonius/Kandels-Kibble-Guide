@@ -18,6 +18,10 @@ const Div = styled.div`
             margin-right: 5%;
             text-align: right;
             text-decoration: none;
+            width: 50%;
+            a{
+                margin-left: 2%;
+            }
         }
     }
     

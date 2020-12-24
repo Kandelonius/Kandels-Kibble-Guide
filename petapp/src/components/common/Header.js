@@ -10,7 +10,7 @@ const Header = () => {
                 <h1>Kandel's Kibbles</h1>
                 <div class="navLinks">
                     <NavLink to="/">Home</NavLink>
-                    <NavLink to="/">Home</NavLink>
+                    <NavLink to="/pet">My Pet</NavLink>
                 </div>
             </header>
         </Div>
