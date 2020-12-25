@@ -6,8 +6,23 @@ import "./App.css";
 
 function App() {
   return (
+    
     <div className="App" >
       <Header />
+      <Wrapper>
+          <Route
+            exact={true}
+            path="/"
+            component={Home}
+          />
+          <Route
+            path="/about"
+            component={About}
+          />
+          <Route path="/contact"
+            component={Contact}
+          />
+        </Wrapper>
     </div>
   );
 }
