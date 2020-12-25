@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import './App.css';
 import { Route } from 'react-router-dom';
 import Header from './components/common/Header';
+import Home from './components/pages/Home';
+import MyPet from './components/pages/MyPet';
 import "./App.css";
 
 function App() {
@@ -16,8 +18,8 @@ function App() {
             component={Home}
           />
           <Route
-            path="/about"
-            component={About}
+            path="/myPet"
+            component={MyPet}
           />
           <Route path="/contact"
             component={Contact}
