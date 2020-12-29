@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import pets from '../images/cat-and-dog-home.jpg';
-import Div from './HeaderStiles.jsx';
+import Div from './HeaderStyles.jsx';
+
+/*
+this is the static nav bar at the top of every
+*/
 
 const Header = () => {
     return (
