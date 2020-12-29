@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import Div from '../componentStyles/MyPetStyles';
 
 export default function MyPet() {
     return (
-        <div>
+        <Div>
             
-        </div>
+        </Div>
     )
 }

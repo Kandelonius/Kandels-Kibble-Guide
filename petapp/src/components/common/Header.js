@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import Div from './HeaderStyles.jsx';
+import Div from '../componentStyles/HeaderStyles.jsx';
 
 /*
 this is the static nav bar at the top of every
