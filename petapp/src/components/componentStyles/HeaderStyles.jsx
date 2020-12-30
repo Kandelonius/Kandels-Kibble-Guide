@@ -27,4 +27,4 @@ const Div = styled.div`
     
 `
 
-export default Div
+export default Div;
