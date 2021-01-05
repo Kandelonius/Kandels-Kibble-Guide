@@ -10,6 +10,9 @@ export default function Home() {
     return (
         <Div>
             <img src={petPic} alt="a cat and dog" />
+            <div>
+                
+            </div>
         </Div>
     )
 }
