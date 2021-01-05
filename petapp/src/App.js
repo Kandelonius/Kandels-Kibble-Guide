@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import PrivateRoute from "./components//common/PrivateRoute";
 import Header from './components/common/Header';
 import Home from './components/pages/Home';
@@ -14,17 +14,6 @@ function App() {
 
     <div className="App" >
       <Header />
-      <ul>
-        <li>
-          <Link to="/login">Login</Link>
-        </li>
-        <li>
-          <Link to="/pet">Protected Page</Link>
-        </li>
-        <li>
-          <Link to="/FriendForm">Form Page</Link>
-        </li>
-      </ul>
       <Switch>
         <Route
           exact={true}
