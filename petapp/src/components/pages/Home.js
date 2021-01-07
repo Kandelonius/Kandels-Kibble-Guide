@@ -11,7 +11,7 @@ export default function Home() {
         <Div>
             <img src={petPic} alt="a cat and dog" />
             <div>
-                
+
             </div>
         </Div>
     )

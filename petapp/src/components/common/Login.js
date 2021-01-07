@@ -21,13 +21,13 @@ export default class Login extends Component {
     login = e => {
         e.preventDefault();
         axiosWithAuth()
-      .post("http://localhost:5000/api/login", this.state.credentials)
-      .then(res => {
-        // res.data.payload
-        localStorage.setItem("token", res.data.payload);
-        this.props.history.push("/Friends");
-      })
-      .catch(err => console.log(err));
+            .post("http://localhost:5000/api/login", this.state.credentials)
+            .then(res => {
+                // res.data.payload
+                localStorage.setItem("token", res.data.payload);
+                this.props.history.push("/Home");
+            })
+            .catch(err => console.log(err));
     };
     render() {
         return (

@@ -20,7 +20,7 @@ function App() {
           path="/"
           component={Home}
         />
-        <PrivateRoute 
+        <PrivateRoute
           exact={true}
           path="/pet"
           component={Pets}
