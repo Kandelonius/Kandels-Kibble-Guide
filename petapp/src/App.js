@@ -4,8 +4,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import PrivateRoute from "./components//common/PrivateRoute";
 import Header from './components/common/Header';
 import Home from './components/pages/Home';
-
 import Pets from './components/pages/MyPet';
+import Login from './components/common/Login';
 
 import "./App.css";
 
@@ -20,10 +20,15 @@ function App() {
           path="/"
           component={Home}
         />
-        <Route
+        <PrivateRoute
           exact={true}
           path="/pet"
           component={Pets}
+        />
+        <Route
+          exact={true}
+          path="/login"
+          component={Login}
         />
       </Switch>
     </div>
