@@ -23,7 +23,6 @@ export default class Login extends Component {
         axiosWithAuth()
             .post("http://localhost:5000/api/login", this.state.credentials)
             .then(res => {
-                // res.data.payload
                 localStorage.setItem("token", res.data.payload);
                 this.props.history.push("/Home");
             })
