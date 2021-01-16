@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { axiosWithAuth } from "../utils/axiosWithAuth";
+import { axiosWithAuth } from "./AxiosWithAuth";
 
 export default class Login extends Component {
     state = {
