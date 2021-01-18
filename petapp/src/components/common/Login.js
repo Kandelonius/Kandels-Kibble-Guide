@@ -28,6 +28,7 @@ export default class Login extends Component {
             })
             .catch(err => console.log(err));
     };
+    
     render() {
         return (
             <div>
