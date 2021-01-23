@@ -1,9 +1,12 @@
 package com.kibbles.app.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.validation.constraints.Email;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -35,6 +38,12 @@ public class User {
     @Email
     private String primaryemail;
 
+    @OneToMany(mappedBy = "user",
+        cascade = CascadeType.ALL,
+        orphanRemoval = true)
+    @JsonIgnoreProperties(value = "user", allowSetters = true)
+    private List<Userpet> userpet = new ArrayList<>();
+
     public User() {
     }
 
@@ -42,9 +51,38 @@ public class User {
         String username,
         String password,
         @Email String primaryemail) {
-        this.username = username;
-        this.password = password;
+        setUsername(username);
+        setPassword(password);
         this.primaryemail = primaryemail;
     }
-    
+
+    public long getUserid() {
+        return userid;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    /**
+     * Setter for password
+     *
+     * @param password the new password (String) for the user
+     */
+    public void setPassword(String password)
+    {
+        this.password = password;
+    }
+
+    public String getPrimaryemail() {
+        return primaryemail;
+    }
+
+    public void setPrimaryemail(String primaryemail) {
+        this.primaryemail = primaryemail;
+    }
 }
