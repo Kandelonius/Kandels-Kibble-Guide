@@ -1,4 +1,9 @@
 package com.kibbles.app.services;
 
-public class UserService {
+import com.kibbles.app.models.User;
+
+public interface UserService {
+
+    User findUserById(long id);
+
 }
