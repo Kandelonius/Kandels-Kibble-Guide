@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityNotFoundException;
+import java.util.List;
 
 @Transactional
 @Service(value = "userService")
@@ -20,6 +21,31 @@ public class UserServiceImpl implements UserService {
     {
         return userrepos.findById(id)
             .orElseThrow(() -> new EntityNotFoundException("User id " + id + " not found!"));
+    }
+
+    @Override
+    public void delete(long id) {
+
+    }
+
+    @Override
+    public User update(
+        User user,
+        long id) {
+        return null;
+    }
+
+    @Override
+    public List<User> findByNameContaining(String username)
+    {
+        return userrepos.findByUsernameContainingIgnoreCase(username.toLowerCase());
+    }
+
+    @Transactional
+    @Override
+    public void deleteAll()
+    {
+        userrepos.deleteAll();
     }
 
 }
