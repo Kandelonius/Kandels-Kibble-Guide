@@ -26,5 +26,7 @@ public class SeedData implements CommandLineRunner {
             "secure",
             "a@b.c"
         );
+
+        userService.save(u1);
     }
 }

@@ -56,6 +56,10 @@ public class User {
         this.primaryemail = primaryemail;
     }
 
+    public void setUserid(long userid) {
+        this.userid = userid;
+    }
+
     public long getUserid() {
         return userid;
     }
@@ -76,6 +80,10 @@ public class User {
     public void setPassword(String password)
     {
         this.password = password;
+    }
+
+    public String getPassword() {
+        return password;
     }
 
     public String getPrimaryemail() {

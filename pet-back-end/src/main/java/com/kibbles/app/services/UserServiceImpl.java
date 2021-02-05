@@ -34,6 +34,28 @@ public class UserServiceImpl implements UserService {
         return list;
     }
 
+    @Transactional
+    @Override
+    public User save(User user)
+    {
+        User newUser = new User();
+
+        if (user.getUserid() != 0)
+        {
+            userrepos.findById(user.getUserid())
+                .orElseThrow(() -> new EntityNotFoundException("User id " + user.getUserid() + " not found!"));
+            newUser.setUserid(user.getUserid());
+        }
+
+        newUser.setUsername(user.getUsername()
+            .toLowerCase());
+        newUser.setPassword(user.getPassword());
+        newUser.setPrimaryemail(user.getPrimaryemail()
+            .toLowerCase());
+
+        return userrepos.save(newUser);
+    }
+
     @Override
     public void delete(long id) {
 
