@@ -8,6 +8,8 @@ public interface UserService {
 
     User findUserById(long id);
 
+    List<User> findAll();
+
     List<User> findByNameContaining(String username);
 
     void delete(long id);
