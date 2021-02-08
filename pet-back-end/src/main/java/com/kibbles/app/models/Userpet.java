@@ -3,42 +3,49 @@ package com.kibbles.app.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "userpet")
 
-public class Userpet {
+public class Userpet implements Serializable {
 
     /**
-     * The primary key (long) of the userpet table
+     * 1/2 of the primary key (long) for userroles.
+     * Also is a foreign key into the users table
      */
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long petid;
-
     @ManyToOne
-    @JoinColumn(name = "userid",
-        nullable = false)
-    @JsonIgnoreProperties(value = "userpet",
-        allowSetters = true)
+    @JoinColumn(name = "userid")
+    @JsonIgnoreProperties(value = "users", allowSetters = true)
     private User user;
+
+    /**
+     * 1/2 of the primary key (long) for userroles.
+     * Also is a foreign key into the users table
+     */
+    @Id
+    @ManyToOne
+    @JoinColumn(name = "petid")
+    @JsonIgnoreProperties(value = "pets", allowSetters = true)
+    private Pet pet;
 
     public Userpet() {
     }
 
     public Userpet(
-        long petid,
+        Pet pet,
         User user) {
-        this.petid = petid;
+        this.pet = pet;
         this.user = user;
     }
 
-    public long getPetid() {
-        return petid;
+    public Pet getPet() {
+        return pet;
     }
 
-    public void setPetid(long petid) {
-        this.petid = petid;
+    public void setPet(Pet pet) {
+        this.pet = pet;
     }
 
     public User getUser() {
