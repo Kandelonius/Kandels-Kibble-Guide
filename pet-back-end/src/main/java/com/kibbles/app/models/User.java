@@ -30,6 +30,9 @@ public class User {
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
 
+    @Column(nullable = false)
+    private int age;
+
     /**
      * Primary email account of user. Could be used as the userid. Cannot be null and must be unique.
      */
@@ -50,9 +53,11 @@ public class User {
     public User(
         String username,
         String password,
+        int ageinmonths,
         @Email String primaryemail) {
         setUsername(username);
         setPassword(password);
+        setAge(age);
         this.primaryemail = primaryemail;
     }
 
@@ -84,6 +89,14 @@ public class User {
 
     public String getPassword() {
         return password;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public String getPrimaryemail() {
