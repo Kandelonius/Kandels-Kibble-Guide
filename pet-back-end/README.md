@@ -14,7 +14,7 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     }
 ]
 '''
-
+</details>
 - post a new user
 <details>
 <summary>localhost:1982/users/users</summary>
@@ -24,7 +24,8 @@ Using the provided seed data, expand each endpoint below to see the output it ge
     {
         "username": "James",
         "password" : "Coffee123",
-        "primaryemail": "thing"
+        "primaryemail": "a@b.c"
     }
 ]
 '''
+</details>
