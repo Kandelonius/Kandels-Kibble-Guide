@@ -1,6 +1,7 @@
 
 Using the provided seed data, expand each endpoint below to see the output it generates.
 
+- get all users
 <details>
 <summary>localhost:1982/users/users</summary>
 
@@ -10,6 +11,20 @@ Using the provided seed data, expand each endpoint below to see the output it ge
         "userid": 1,
         "username": "john",
         "primaryemail": "a@b.c"
+    }
+]
+'''
+
+- post a new user
+<details>
+<summary>localhost:1982/users/users</summary>
+
+'''JSON
+[
+    {
+        "username": "James",
+        "password" : "Coffee123",
+        "primaryemail": "thing"
     }
 ]
 '''
