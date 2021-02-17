@@ -15,7 +15,7 @@ Using the provided seed data, expand each endpoint below to see the output it ge
 ]
 '''
 </details>
-- post a new user
+- post a new user: sample input
 <details>
 <summary>localhost:1982/users/users</summary>
 
