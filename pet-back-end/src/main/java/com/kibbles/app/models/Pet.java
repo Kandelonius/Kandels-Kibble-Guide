@@ -21,18 +21,19 @@ public class Pet {
     @Column(nullable = false)
     private int ageinmonths;
 
-//    @ManyToOne
-//    @JoinColumn(name = "typeid")
-//    private PetType type;
+    //    @ManyToOne
+    //    @JoinColumn(name = "typeid")
+    //    private PetType type;
 
-    @OneToMany(mappedBy = "pets",
+    @OneToMany(mappedBy = "pet",
         cascade = CascadeType.ALL)
-    @JsonIgnoreProperties(value = "pets",
+    @JsonIgnoreProperties(value = "pet",
         allowSetters = true)
-    private Set<PetType> types = new HashSet<>();
+    @Column(nullable = false)
+    private Set<PetType> pettype = new HashSet<>();
 
     @ManyToOne
-    @JsonIgnoreProperties(value = "pet",
+    @JsonIgnoreProperties(value = "pets",
         allowSetters = true)
     @JoinColumn(name = "userid")
     private Set<Userpet> user = new HashSet<>();
@@ -44,12 +45,10 @@ public class Pet {
         long petid,
         String name,
         int ageinmonths,
-        PetType pettype,
         Set<Userpet> user) {
         this.petid = petid;
         this.name = name;
         this.ageinmonths = ageinmonths;
-        this.PetType = pettype;
         this.user = user;
     }
 
