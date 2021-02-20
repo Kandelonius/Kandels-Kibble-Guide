@@ -29,8 +29,7 @@ public class Pet {
         cascade = CascadeType.ALL)
     @JsonIgnoreProperties(value = "pet",
         allowSetters = true)
-    @Column(nullable = false)
-    private Set<PetType> pettype = new HashSet<>();
+    private Set<PetType> types = new HashSet<>();
 
     @ManyToOne
     @JsonIgnoreProperties(value = "pets",

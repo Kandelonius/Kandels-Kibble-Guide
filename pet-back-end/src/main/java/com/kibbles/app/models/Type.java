@@ -36,4 +36,32 @@ public class Type {
 
     public Type() {
     }
+
+    public Type(String name) {
+        this.name = name;
+    }
+
+    public long getTypeid() {
+        return typeid;
+    }
+
+    public void setTypeid(long typeid) {
+        this.typeid = typeid;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Set<PetType> getUsers() {
+        return users;
+    }
+
+    public void setUsers(Set<PetType> users) {
+        this.users = users;
+    }
 }

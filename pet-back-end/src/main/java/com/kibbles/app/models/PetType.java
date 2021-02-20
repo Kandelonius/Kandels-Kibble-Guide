@@ -3,41 +3,62 @@ package com.kibbles.app.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
 @Table(name = "types")
-public class PetType {
+public class PetType
+    implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long typeid;
 
     /**
-     * The name (String) of the pet type. Cannot be null and must be unique. (cat or dog)
+     * 1/2 of the primary key (long) for pettypes.
+     * Also is a foreign key into the pets table
      */
-    @Column(nullable = false,
-        unique = true)
-    private String name;
+    @Id
+    @ManyToOne
+    @JoinColumn(name = "petid")
+    @JsonIgnoreProperties(value = "types", allowSetters = true)
+    private Pet pet;
 
-    @ManyToOne(mappedBy = "pet",
-        cascade = CascadeType.ALL)
-    @JsonIgnoreProperties(value = "pets",
-        allowSetters = true)
-    @Column(nullable = false)
-    private Set<PetType> pettype = new HashSet<>();
+    /**
+     * 1/2 of the primary key (long) for pettypes.
+     * Also is a foreign key into the types table
+     */
+    @Id
+    @ManyToOne
+    @JoinColumn(name = "typeid")
+    @JsonIgnoreProperties(value = "users", allowSetters = true)
+    private Type type;
 
     public PetType() {
     }
 
-    /**
-     * Given the name, create a new role object. User gets added later
-     *
-     * @param name the name of the role in uppercase
-     */
-    public Pet(String name)
-    {
-        this.name = name.toUpperCase();
+    public PetType(
+        Pet pet,
+        Type type) {
+        this.pet = pet;
+        this.type = type;
+    }
+
+    public Pet getPet() {
+        return pet;
+    }
+
+    public void setPet(Pet pet) {
+        this.pet = pet;
+    }
+
+    public Type getType() {
+        return type;
+    }
+
+    public void setType(Type type) {
+        this.type = type;
     }
 }
