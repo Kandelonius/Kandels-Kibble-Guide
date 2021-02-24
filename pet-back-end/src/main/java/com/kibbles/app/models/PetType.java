@@ -8,7 +8,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "types")
+@Table(name = "pettype")
 public class PetType
     implements Serializable {
 

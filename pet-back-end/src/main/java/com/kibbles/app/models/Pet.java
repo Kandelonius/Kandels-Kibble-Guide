@@ -21,17 +21,13 @@ public class Pet {
     @Column(nullable = false)
     private int ageinmonths;
 
-    //    @ManyToOne
-    //    @JoinColumn(name = "typeid")
-    //    private PetType type;
-
     @OneToMany(mappedBy = "pet",
         cascade = CascadeType.ALL)
     @JsonIgnoreProperties(value = "pet",
         allowSetters = true)
     private Set<PetType> types = new HashSet<>();
 
-    @ManyToOne
+    @OneToMany
     @JsonIgnoreProperties(value = "pets",
         allowSetters = true)
     @JoinColumn(name = "userid")

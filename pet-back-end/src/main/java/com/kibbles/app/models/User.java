@@ -6,7 +6,9 @@ import javax.validation.constraints.Email;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -42,10 +44,9 @@ public class User {
     private String primaryemail;
 
     @OneToMany(mappedBy = "user",
-        cascade = CascadeType.ALL,
-        orphanRemoval = true)
+        cascade = CascadeType.ALL)
     @JsonIgnoreProperties(value = "user", allowSetters = true)
-    private List<Userpet> userpet = new ArrayList<>();
+    private Set<Userpet> userpet = new HashSet<>();
 
     public User() {
     }
