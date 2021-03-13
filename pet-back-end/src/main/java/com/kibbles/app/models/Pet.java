@@ -21,6 +21,9 @@ public class Pet {
     @Column(nullable = false)
     private int ageinmonths;
 
+    @Column(nullable = false)
+    private String type;
+
 //    @OneToMany(mappedBy = "pet",
 //        cascade = CascadeType.ALL)
 //    @JsonIgnoreProperties(value = "pet",
@@ -40,10 +43,12 @@ public class Pet {
         long petid,
         String name,
         int ageinmonths,
+        String type,
         Set<Userpet> user) {
         this.petid = petid;
         this.name = name;
         this.ageinmonths = ageinmonths;
+        this.type = type;
         this.user = user;
     }
 
@@ -69,6 +74,14 @@ public class Pet {
 
     public void setAgeinmonths(int ageinmonths) {
         this.ageinmonths = ageinmonths;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public Set<Userpet> getUser() {
