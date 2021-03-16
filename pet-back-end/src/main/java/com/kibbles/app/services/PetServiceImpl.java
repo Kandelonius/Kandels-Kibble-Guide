@@ -3,12 +3,16 @@ package com.kibbles.app.services;
 import com.kibbles.app.models.Pet;
 import com.kibbles.app.repository.PetRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityExistsException;
 import javax.persistence.EntityNotFoundException;
+import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 
+@Transactional
+@Service(value = "petService")
 public class PetServiceImpl implements PetService{
 
     @Autowired
