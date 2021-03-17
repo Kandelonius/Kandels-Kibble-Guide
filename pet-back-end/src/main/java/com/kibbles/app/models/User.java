@@ -2,12 +2,10 @@ package com.kibbles.app.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import javax.validation.constraints.Email;
 
 import javax.persistence.*;
-import java.util.ArrayList;
+import javax.validation.constraints.Email;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -45,7 +43,8 @@ public class User {
 
     @OneToMany(mappedBy = "user",
         cascade = CascadeType.ALL)
-    @JsonIgnoreProperties(value = "user", allowSetters = true)
+    @JsonIgnoreProperties(value = "user",
+        allowSetters = true)
     private Set<Userpet> userpet = new HashSet<>();
 
     public User() {
@@ -81,8 +80,7 @@ public class User {
      *
      * @param password the new password (String) for the user
      */
-    public void setPassword(String password)
-    {
+    public void setPassword(String password) {
         this.password = password;
     }
 

@@ -17,7 +17,8 @@ public class Userpet implements Serializable {
     @Id
     @ManyToOne
     @JoinColumn(name = "userid")
-    @JsonIgnoreProperties(value = "users", allowSetters = true)
+    @JsonIgnoreProperties(value = "users",
+        allowSetters = true)
     private User user;
 
     /**
@@ -27,7 +28,8 @@ public class Userpet implements Serializable {
     @Id
     @ManyToOne
     @JoinColumn(name = "petid")
-    @JsonIgnoreProperties(value = "pets", allowSetters = true)
+    @JsonIgnoreProperties(value = "pets",
+        allowSetters = true)
     private Pet pet;
 
     public Userpet() {

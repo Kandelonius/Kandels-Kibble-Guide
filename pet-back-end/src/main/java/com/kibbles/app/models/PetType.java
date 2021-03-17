@@ -4,8 +4,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 @Table(name = "pettype")
@@ -23,7 +21,8 @@ public class PetType
     @Id
     @ManyToOne
     @JoinColumn(name = "petid")
-    @JsonIgnoreProperties(value = "types", allowSetters = true)
+    @JsonIgnoreProperties(value = "types",
+        allowSetters = true)
     private Pet pet;
 
     /**
@@ -33,7 +32,8 @@ public class PetType
     @Id
     @ManyToOne
     @JoinColumn(name = "typeid")
-    @JsonIgnoreProperties(value = "users", allowSetters = true)
+    @JsonIgnoreProperties(value = "users",
+        allowSetters = true)
     private Type type;
 
     public PetType() {

@@ -24,11 +24,11 @@ public class Pet {
     @Column(nullable = false)
     private String type;
 
-//    @OneToMany(mappedBy = "pet",
-//        cascade = CascadeType.ALL)
-//    @JsonIgnoreProperties(value = "pet",
-//        allowSetters = true)
-//    private Set<PetType> types = new HashSet<>();
+    //    @OneToMany(mappedBy = "pet",
+    //        cascade = CascadeType.ALL)
+    //    @JsonIgnoreProperties(value = "pet",
+    //        allowSetters = true)
+    //    private Set<PetType> types = new HashSet<>();
 
     @OneToMany
     @JsonIgnoreProperties(value = "pets",
