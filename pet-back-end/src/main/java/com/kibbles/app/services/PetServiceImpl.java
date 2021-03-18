@@ -13,7 +13,7 @@ import java.util.List;
 
 @Transactional
 @Service(value = "petService")
-public class PetServiceImpl implements PetService{
+public class PetServiceImpl implements PetService {
 
     @Autowired
     PetRepository petrepos;
@@ -40,19 +40,24 @@ public class PetServiceImpl implements PetService{
     @Override
     public Pet save(Pet pet) {
         if (pet.getUser()
-            .size() > 0)
-        {
+            .size() > 0) {
             throw new EntityExistsException("Pet already exists.");
         }
 
         return petrepos.save(pet);
     }
 
+    @Transactional
     @Override
     public void delete(long id) {
-        petrepos.findById(id)
-            .orElseThrow(() -> new EntityNotFoundException("Pet id " + id + " not found!"));
-        petrepos.deleteById(id);
+
+        if (petrepos.findById(id)
+            .isPresent()) {
+            petrepos.deleteById(id);
+
+        } else {
+            throw new EntityNotFoundException("Pet id " + id + " not found!");
+        }
     }
 
     @Override

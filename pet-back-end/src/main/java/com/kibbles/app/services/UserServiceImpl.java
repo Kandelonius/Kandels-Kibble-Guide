@@ -56,9 +56,12 @@ public class UserServiceImpl implements UserService {
         return userrepos.save(newUser);
     }
 
+    @Transactional
     @Override
     public void delete(long id) {
-
+        userrepos.findById(id)
+            .orElseThrow(() -> new EntityNotFoundException("User id " + id + " not found!"));
+        userrepos.deleteById(id);
     }
 
     @Override

@@ -14,5 +14,5 @@ public interface PetService {
 
     void delete(long id);
 
-    public void deleteAll();
+    void deleteAll();
 }
