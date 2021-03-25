@@ -35,7 +35,5 @@ Using the provided seed data, expand each endpoint below to see the output it ge
 <details>
 <summary>localhost:1982/users/user/1</summary>
 
-'''
 Status: OK
-'''
 </details>
