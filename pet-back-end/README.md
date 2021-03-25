@@ -8,9 +8,9 @@ Using the provided seed data, expand each endpoint below to see the output it ge
 '''JSON
 [
     {
-        "userid": 1,
-        "username": "john",
-        "primaryemail": "a@b.c"
+        "userid" : 1,
+        "username" : "john",
+        "primaryemail" : "a@b.c"
     }
 ]
 '''
@@ -23,9 +23,9 @@ Using the provided seed data, expand each endpoint below to see the output it ge
 '''JSON
 [
     {
-        "username": "James",
+        "username" : "James",
         "password" : "Coffee123",
-        "primaryemail": "a@b.c"
+        "primaryemail" : "a@b.c"
     }
 ]
 '''
@@ -35,5 +35,5 @@ Using the provided seed data, expand each endpoint below to see the output it ge
 <details>
 <summary>localhost:1982/users/user/1</summary>
 
-Status: OK
+    Status: OK
 </details>
