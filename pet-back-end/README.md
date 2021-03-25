@@ -15,9 +15,10 @@ Using the provided seed data, expand each endpoint below to see the output it ge
 ]
 '''
 </details>
+
 - post a new user: sample input
 <details>
-<summary>localhost:1982/users/users</summary>
+<summary>localhost:1982/users/user</summary>
 
 '''JSON
 [
@@ -27,5 +28,14 @@ Using the provided seed data, expand each endpoint below to see the output it ge
         "primaryemail": "a@b.c"
     }
 ]
+'''
+</details>
+
+- delete a user by id
+<details>
+<summary>localhost:1982/users/user/1</summary>
+
+'''
+Status: OK
 '''
 </details>

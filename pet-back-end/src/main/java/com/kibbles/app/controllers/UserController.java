@@ -25,8 +25,7 @@ public class UserController {
         produces = "application/json")
     public ResponseEntity<?> getUserById(
         @PathVariable
-            Long userId)
-    {
+            Long userId) {
         User u = userService.findUserById(userId);
         return new ResponseEntity<>(u,
             HttpStatus.OK);
@@ -34,8 +33,7 @@ public class UserController {
 
     @GetMapping(value = "/users",
         produces = "application/json")
-    public ResponseEntity<?> listAllUsers()
-    {
+    public ResponseEntity<?> listAllUsers() {
         List<User> myUsers = userService.findAll();
         return new ResponseEntity<>(myUsers,
             HttpStatus.OK);
@@ -47,8 +45,7 @@ public class UserController {
         @Valid
         @RequestBody
             User newuser) throws
-                          URISyntaxException
-    {
+                          URISyntaxException {
         newuser.setUserid(0);
         newuser = userService.save(newuser);
 
@@ -63,6 +60,14 @@ public class UserController {
         return new ResponseEntity<>(null,
             responseHeaders,
             HttpStatus.CREATED);
+    }
+
+    @DeleteMapping(value = "/user/{id}")
+    public ResponseEntity<?> deleteUser(
+        @PathVariable
+            long id) {
+        userService.delete(id);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
 }
