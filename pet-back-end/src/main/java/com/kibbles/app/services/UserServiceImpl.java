@@ -18,15 +18,13 @@ public class UserServiceImpl implements UserService {
     private UserRepository userrepos;
 
     public User findUserById(long id) throws
-                                      EntityNotFoundException
-    {
+                                      EntityNotFoundException {
         return userrepos.findById(id)
             .orElseThrow(() -> new EntityNotFoundException("User id " + id + " not found!"));
     }
 
     @Override
-    public List<User> findAll()
-    {
+    public List<User> findAll() {
         List<User> list = new ArrayList<>();
         userrepos.findAll()
             .iterator()
@@ -36,12 +34,10 @@ public class UserServiceImpl implements UserService {
 
     @Transactional
     @Override
-    public User save(User user)
-    {
+    public User save(User user) {
         User newUser = new User();
 
-        if (user.getUserid() != 0)
-        {
+        if (user.getUserid() != 0) {
             userrepos.findById(user.getUserid())
                 .orElseThrow(() -> new EntityNotFoundException("User id " + user.getUserid() + " not found!"));
             newUser.setUserid(user.getUserid());
@@ -68,19 +64,33 @@ public class UserServiceImpl implements UserService {
     public User update(
         User user,
         long id) {
-        return null;
+        User currentUser = findUserById(id);
+
+        if (user.getUsername() != null) {
+            currentUser.setUsername(user.getUsername()
+                .toLowerCase());
+        }
+
+        if (user.getPassword() != null) {
+            currentUser.setPassword(user.getPassword());
+        }
+
+        if (user.getPrimaryemail() != null) {
+            currentUser.setPrimaryemail(user.getPrimaryemail()
+                .toLowerCase());
+        }
+
+        return userrepos.save(currentUser);
     }
 
     @Override
-    public List<User> findByNameContaining(String username)
-    {
+    public List<User> findByNameContaining(String username) {
         return userrepos.findByUsernameContainingIgnoreCase(username.toLowerCase());
     }
 
     @Transactional
     @Override
-    public void deleteAll()
-    {
+    public void deleteAll() {
         userrepos.deleteAll();
     }
 

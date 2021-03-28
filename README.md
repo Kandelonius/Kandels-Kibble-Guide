@@ -2,7 +2,7 @@
 
 ## A pet nutrition guide built using various online courses as a guide to simulate filling expectations of an app for a client
 
-## the app tells a consumer what a pet can an can't eat and gives guidelines for proportions
+## the app tells a consumer what a pet can and can't eat and gives guidelines for proportions
 
 ### a canine balanced diet should have amino acids from protiens, fatty acids, carbohydrates, vitamins, minerals, and water
 
