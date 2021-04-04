@@ -7,8 +7,6 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.validation.constraints.Email;
-
 @Transactional
 @Component
 public class SeedData implements CommandLineRunner {
@@ -18,8 +16,7 @@ public class SeedData implements CommandLineRunner {
 
     @Transactional
     @Override
-    public void run(String[] args) throws Exception
-    {
+    public void run(String[] args) throws Exception {
         userService.deleteAll();
         User u1 = new User(
             "John",

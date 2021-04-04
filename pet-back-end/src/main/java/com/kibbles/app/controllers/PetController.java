@@ -18,11 +18,13 @@ public class PetController {
     private PetService petService;
 
     @GetMapping(value = "/pet/{petid}",
-    produces = "application/json")
+        produces = "application/json")
     public ResponseEntity<?> getPetById(
-        @PathVariable long petid) {
+        @PathVariable
+            long petid) {
         Pet p = petService.findPetById(petid);
-        return new ResponseEntity<>(p, HttpStatus.OK);
+        return new ResponseEntity<>(p,
+            HttpStatus.OK);
     }
 
 
