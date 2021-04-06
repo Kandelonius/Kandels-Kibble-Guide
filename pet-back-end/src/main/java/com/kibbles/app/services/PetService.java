@@ -10,7 +10,7 @@ public interface PetService {
 
     Pet findPetById(long id);
 
-    Pet save(Pet pet);
+    Pet save(long userid, Pet pet);
 
     void delete(long id);
 

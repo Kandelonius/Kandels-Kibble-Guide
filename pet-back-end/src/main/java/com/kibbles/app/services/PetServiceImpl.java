@@ -1,6 +1,7 @@
 package com.kibbles.app.services;
 
 import com.kibbles.app.models.Pet;
+import com.kibbles.app.models.User;
 import com.kibbles.app.repository.PetRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,6 +18,9 @@ public class PetServiceImpl implements PetService {
 
     @Autowired
     PetRepository petrepos;
+
+    @Autowired
+    private UserService userService;
 
     @Override
     public List<Pet> findAll() {
@@ -38,10 +42,11 @@ public class PetServiceImpl implements PetService {
     }
 
     @Override
-    public Pet save(Pet pet) {
-        if (pet.getUser()
-            .size() > 0) {
-            throw new EntityExistsException("Pet already exists.");
+    public Pet save(long userid, String petname) {
+        User currentUser = userService.findUserById(userid);
+
+        Pet newpet = new Pet(currentUser,
+            pet);
         }
 
         return petrepos.save(pet);

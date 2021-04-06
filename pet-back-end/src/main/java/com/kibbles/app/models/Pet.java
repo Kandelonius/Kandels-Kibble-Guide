@@ -30,13 +30,18 @@ public class Pet {
     //        allowSetters = true)
     //    private Set<PetType> types = new HashSet<>();
 
-    @OneToMany
-    @JsonIgnoreProperties(value = "pets",
+    @ManyToOne
+    @JsonIgnoreProperties(value = "pet",
         allowSetters = true)
     @JoinColumn(name = "userid")
     private Set<Userpet> user = new HashSet<>();
 
     public Pet() {
+    }
+
+    public Pet(User user, String name) {
+        this.user = user;
+        this.name = name;
     }
 
     public Pet(
