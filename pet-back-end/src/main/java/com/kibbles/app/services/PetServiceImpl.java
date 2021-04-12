@@ -46,11 +46,12 @@ public class PetServiceImpl implements PetService {
         User currentUser = userService.findUserById(userid);
 
         Pet newpet = new Pet(currentUser,
-            pet);
-        }
+            petname);
 
-        return petrepos.save(pet);
+
+        return petrepos.save(newpet);
     }
+
 
     @Transactional
     @Override

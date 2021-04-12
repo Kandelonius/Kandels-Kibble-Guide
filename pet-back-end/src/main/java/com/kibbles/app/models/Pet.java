@@ -34,7 +34,7 @@ public class Pet {
     @JsonIgnoreProperties(value = "pet",
         allowSetters = true)
     @JoinColumn(name = "userid")
-    private Set<Userpet> user = new HashSet<>();
+    private User user;
 
     public Pet() {
     }
@@ -49,7 +49,7 @@ public class Pet {
         String name,
         int ageinmonths,
         String type,
-        Set<Userpet> user) {
+        User user) {
         this.petid = petid;
         this.name = name;
         this.ageinmonths = ageinmonths;
@@ -89,11 +89,11 @@ public class Pet {
         this.type = type;
     }
 
-    public Set<Userpet> getUser() {
+    public User getUser() {
         return user;
     }
 
-    public void setUser(Set<Userpet> user) {
+    public void setUser(User user) {
         this.user = user;
     }
 }
