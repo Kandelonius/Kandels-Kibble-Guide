@@ -21,8 +21,7 @@ public class PetController {
 
     @GetMapping(value = "/pets",
         produces = "application/json")
-    public ResponseEntity<?> listAllPets()
-    {
+    public ResponseEntity<?> listAllPets() {
         List<Pet> allPets = petService.findAll();
         return new ResponseEntity<>(allPets,
             HttpStatus.OK);
@@ -37,6 +36,5 @@ public class PetController {
         return new ResponseEntity<>(p,
             HttpStatus.OK);
     }
-
 
 }
