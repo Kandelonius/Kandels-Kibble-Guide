@@ -45,7 +45,7 @@ public class User {
         cascade = CascadeType.ALL)
     @JsonIgnoreProperties(value = "user",
         allowSetters = true)
-    private Set<Userpet> userpet = new HashSet<>();
+    private Set<Pet> userpet = new HashSet<>();
 
     public User() {
     }
@@ -102,5 +102,13 @@ public class User {
 
     public void setPrimaryemail(String primaryemail) {
         this.primaryemail = primaryemail;
+    }
+
+    public Set<Pet> getUserpet() {
+        return userpet;
+    }
+
+    public void setUserpet(Set<Pet> userpet) {
+        this.userpet = userpet;
     }
 }

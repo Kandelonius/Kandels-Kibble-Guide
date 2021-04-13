@@ -10,12 +10,23 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/pets")
 public class PetController {
 
     @Autowired
     private PetService petService;
+
+    @GetMapping(value = "/pets",
+        produces = "application/json")
+    public ResponseEntity<?> listAllPets()
+    {
+        List<Pet> allPets = petService.findAll();
+        return new ResponseEntity<>(allPets,
+            HttpStatus.OK);
+    }
 
     @GetMapping(value = "/pet/{petid}",
         produces = "application/json")

@@ -1,5 +1,6 @@
 package com.kibbles.app;
 
+import com.kibbles.app.models.Pet;
 import com.kibbles.app.models.User;
 import com.kibbles.app.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,10 @@ public class SeedData implements CommandLineRunner {
             "secure",
             "a@b.c"
         );
+
+        u1.getUserpet()
+            .add(new Pet(u1,
+                "Fluffy"));
 
         userService.save(u1);
     }
