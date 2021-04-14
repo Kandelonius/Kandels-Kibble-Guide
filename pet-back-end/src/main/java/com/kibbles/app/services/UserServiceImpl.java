@@ -1,5 +1,6 @@
 package com.kibbles.app.services;
 
+import com.kibbles.app.models.Pet;
 import com.kibbles.app.models.User;
 import com.kibbles.app.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,6 +49,14 @@ public class UserServiceImpl implements UserService {
         newUser.setPassword(user.getPassword());
         newUser.setPrimaryemail(user.getPrimaryemail()
             .toLowerCase());
+
+        newUser.getUserpet()
+            .clear();
+        for (Pet p : user.getUserpet()) {
+            newUser.getUserpet()
+                .add(new Pet(newUser,
+                    p.getName()));
+        }
 
         return userrepos.save(newUser);
     }
