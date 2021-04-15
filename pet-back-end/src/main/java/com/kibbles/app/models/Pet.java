@@ -31,9 +31,9 @@ public class Pet {
     //    private Set<PetType> types = new HashSet<>();
 
     @ManyToOne
+    @JoinColumn(name = "userid")
     @JsonIgnoreProperties(value = "pet",
         allowSetters = true)
-    @JoinColumn(name = "userid")
     private User user;
 
     public Pet() {

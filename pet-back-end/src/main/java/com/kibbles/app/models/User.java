@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -45,7 +47,7 @@ public class User {
         cascade = CascadeType.ALL)
     @JsonIgnoreProperties(value = "user",
         allowSetters = true)
-    private Set<Pet> userpet = new HashSet<>();
+    private List<Pet> userpet = new ArrayList<>();
 
     public User() {
     }
@@ -104,11 +106,11 @@ public class User {
         this.primaryemail = primaryemail;
     }
 
-    public Set<Pet> getUserpet() {
+    public List<Pet> getUserpet() {
         return userpet;
     }
 
-    public void setUserpet(Set<Pet> userpet) {
+    public void setUserpet(List<Pet> userpet) {
         this.userpet = userpet;
     }
 }
