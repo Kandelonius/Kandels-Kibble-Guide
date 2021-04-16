@@ -18,6 +18,8 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserRepository userrepos;
 
+    @Autowired PetService petService;
+
     public User findUserById(long id) throws
                                       EntityNotFoundException {
         return userrepos.findById(id)
@@ -50,12 +52,17 @@ public class UserServiceImpl implements UserService {
         newUser.setPrimaryemail(user.getPrimaryemail()
             .toLowerCase());
 
+
+
         newUser.getUserpet()
             .clear();
         for (Pet p : user.getUserpet()) {
+
+            Pet addPet = petService.findPetById(p.getPetid());
+
             newUser.getUserpet()
                 .add(new Pet(newUser,
-                    p.getName()));
+                    addPet.getName()));
         }
 
         return userrepos.save(newUser);
