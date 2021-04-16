@@ -58,11 +58,11 @@ public class UserServiceImpl implements UserService {
             .clear();
         for (Pet p : user.getUserpet()) {
 
-            Pet addPet = petService.findPetById(p.getPetid());
+//            Pet addPet = petService.findPetById(p.getPetid());
 
             newUser.getUserpet()
                 .add(new Pet(newUser,
-                    addPet.getName()));
+                    p.getName()));
         }
 
         return userrepos.save(newUser);

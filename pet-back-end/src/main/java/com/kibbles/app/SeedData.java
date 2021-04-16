@@ -19,15 +19,20 @@ public class SeedData implements CommandLineRunner {
     @Override
     public void run(String[] args) throws Exception {
         userService.deleteAll();
+
+
+
         User u1 = new User(
             "John",
             "secure",
             "a@b.c"
         );
 
+        Pet p1 = new Pet(u1,
+            "Fluffy");
+
         u1.getUserpet()
-            .add(new Pet(u1,
-                "Fluffy"));
+            .add(p1);
 
         userService.save(u1);
     }
