@@ -18,7 +18,8 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserRepository userrepos;
 
-    @Autowired PetService petService;
+    @Autowired
+    PetService petService;
 
     public User findUserById(long id) throws
                                       EntityNotFoundException {
@@ -53,12 +54,11 @@ public class UserServiceImpl implements UserService {
             .toLowerCase());
 
 
-
         newUser.getUserpet()
             .clear();
         for (Pet p : user.getUserpet()) {
 
-//            Pet addPet = petService.findPetById(p.getPetid());
+            //            Pet addPet = petService.findPetById(p.getPetid());
 
             newUser.getUserpet()
                 .add(new Pet(newUser,

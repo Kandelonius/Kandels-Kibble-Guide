@@ -3,8 +3,6 @@ package com.kibbles.app.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 @Table(name = "pets")
@@ -39,7 +37,9 @@ public class Pet {
     public Pet() {
     }
 
-    public Pet(User user, String name) {
+    public Pet(
+        User user,
+        String name) {
         this.user = user;
         this.name = name;
     }

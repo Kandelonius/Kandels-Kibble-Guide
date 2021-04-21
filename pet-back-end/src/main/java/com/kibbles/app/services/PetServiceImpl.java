@@ -6,7 +6,6 @@ import com.kibbles.app.repository.PetRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.EntityExistsException;
 import javax.persistence.EntityNotFoundException;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
@@ -42,7 +41,9 @@ public class PetServiceImpl implements PetService {
     }
 
     @Override
-    public Pet save(long userid, String petname) {
+    public Pet save(
+        long userid,
+        String petname) {
         User currentUser = userService.findUserById(userid);
 
         Pet newpet = new Pet(currentUser,

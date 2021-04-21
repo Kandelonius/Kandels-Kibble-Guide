@@ -21,7 +21,6 @@ public class SeedData implements CommandLineRunner {
         userService.deleteAll();
 
 
-
         User u1 = new User(
             "John",
             "secure",
