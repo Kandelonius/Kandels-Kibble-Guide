@@ -29,13 +29,13 @@ public class SeedData implements CommandLineRunner {
 
         userService.save(u1);
 
-        /*
-        commented out until I reevaluate adding pets*/
         Pet p1 = new Pet(u1,
             "Fluffy");
 
         u1.getUserpet()
             .add(p1);
+
+        userService.update(u1, u1.getUserid());
 
     }
 }

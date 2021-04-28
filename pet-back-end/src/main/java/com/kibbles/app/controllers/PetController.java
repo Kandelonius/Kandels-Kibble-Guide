@@ -19,7 +19,7 @@ public class PetController {
     @Autowired
     private PetService petService;
 
-    @GetMapping(value = "/pets",
+    @GetMapping(value = "/all",
         produces = "application/json")
     public ResponseEntity<?> listAllPets() {
         List<Pet> allPets = petService.findAll();

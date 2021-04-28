@@ -96,6 +96,19 @@ public class UserServiceImpl implements UserService {
                 .toLowerCase());
         }
 
+        if (user.getUserpet()
+            .size() > 0) {
+
+            currentUser.getUserpet()
+                .clear();
+            for (Pet p : user.getUserpet()) {
+                currentUser.getUserpet()
+                    .add(new Pet(currentUser,
+                        p.getName()));
+            }
+
+        }
+
         return userrepos.save(currentUser);
     }
 
