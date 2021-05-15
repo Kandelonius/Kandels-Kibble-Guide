@@ -43,7 +43,7 @@ public class UserServiceImpl implements UserService {
 
         if (user.getUserid() != 0) {
             userrepos.findById(user.getUserid())
-                .orElseThrow(() -> new EntityNotFoundException("User id " + user.getUserid() + " not found!"));
+                .orElseThrow(() -> new EntityNotFoundException("User id " + user.getUserid() + " WHY IS IT 0not found!"));
             newUser.setUserid(user.getUserid());
         }
 
@@ -76,6 +76,7 @@ public class UserServiceImpl implements UserService {
         userrepos.deleteById(id);
     }
 
+    @Transactional
     @Override
     public User update(
         User user,

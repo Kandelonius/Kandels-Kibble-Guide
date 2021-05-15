@@ -26,16 +26,16 @@ public class SeedData implements CommandLineRunner {
             "secure",
             "a@b.c"
         );
-
-        userService.save(u1);
-
         Pet p1 = new Pet(u1,
             "Fluffy");
 
         u1.getUserpet()
             .add(p1);
 
-        userService.update(u1, u1.getUserid());
+        userService.save(u1);
+
+
+        //        userService.update(u1, u1.getUserid());
 
     }
 }

@@ -30,7 +30,7 @@ public class Pet {
 
     @ManyToOne
     @JoinColumn(name = "userid")
-    @JsonIgnoreProperties(value = "pet",
+    @JsonIgnoreProperties(value = "pets",
         allowSetters = true)
     private User user;
 

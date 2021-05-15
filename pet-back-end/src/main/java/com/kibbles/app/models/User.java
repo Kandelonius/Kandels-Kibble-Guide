@@ -59,12 +59,12 @@ public class User {
         this.primaryemail = primaryemail;
     }
 
-    public void setUserid(long userid) {
-        this.userid = userid;
-    }
-
     public long getUserid() {
         return userid;
+    }
+
+    public void setUserid(long userid) {
+        this.userid = userid;
     }
 
     public String getUsername() {
