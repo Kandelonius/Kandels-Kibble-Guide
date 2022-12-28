@@ -5,6 +5,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<UserContext>(opt =>
+    opt.UseSqlServer(connectionString));
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -15,9 +18,7 @@ var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<UserContext>(opt =>
-opt.UseSqlServer(connectionString));
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
