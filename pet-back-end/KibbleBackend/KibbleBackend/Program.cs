@@ -1,3 +1,6 @@
+using KibbleBackend.Models;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -9,7 +12,12 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+
 // Configure the HTTP request pipeline.
+
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<UserContext>(opt =>
+opt.UseSqlServer(connectionString));
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
