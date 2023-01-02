@@ -13,6 +13,24 @@ export class UserListService {
     const copy = this.convert(user);
     return this.http.post<User>(this.resourceUrl, copy);
   }
+
+  update(user: User): Observable<User> {
+    const copy = this.convert(user);
+    return this.http.put<User>(`${this.resourceUrl}/${copy.id}`, copy);
+  }
+
+  find(id: number): Observable<User> {
+    return this.http.get<User>(`${this.resourceUrl}/${id}`);
+  }
+
+  findAll(): Observable<User[]> {
+    return this.http.get<User[]>(this.resourceUrl);
+  }
+
+  delete(id: number | undefined): Observable<HttpResponse<any>> {
+    return this.http.delete<any>(`${this.resourceUrl}/${id}`)
+  }
+
   private convert(user: User): User {
     const copy: User = Object.assign({}, user);
     return copy;
