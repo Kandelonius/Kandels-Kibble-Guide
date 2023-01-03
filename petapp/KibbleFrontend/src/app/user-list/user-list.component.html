@@ -1,1 +1,19 @@
-<p>user-list works!</p>
+<nz-layout>
+  <nz-content>
+    <div class="inner-content">
+      <div nz-row>
+        <div nz-col nzSpan="14" nzOffset="5">
+          <h1>Kibble guide users</h1>
+          <app-user-form></app-user-form>
+          <nz-list nzItemLayout="horizontal">
+            <nz-list-item *ngFor="let user of users$ | async">
+              <ng-container>
+                <nz-tag [nzColor]="'cyan'">{{ user.firstName }}</nz-tag>
+              </ng-container>
+            </nz-list-item>
+          </nz-list>
+        </div>
+      </div>
+    </div>
+  </nz-content>
+</nz-layout>
