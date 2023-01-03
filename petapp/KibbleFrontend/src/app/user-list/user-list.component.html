@@ -9,6 +9,22 @@
             <nz-list-item *ngFor="let user of users$ | async">
               <ng-container>
                 <nz-tag [nzColor]="'cyan'">{{ user.firstName }}</nz-tag>
+                <ul nz-list-item-actions>
+                    <nz-list-item-action>
+                        <nz-switch
+                        [(ngModel)]="user.hasCat"
+                        (click)="changeStatus(user)"
+                        nz-tooltip
+                        nzTooltipTitle="Change User Status"
+                        >
+                        </nz-switch>
+                    </nz-list-item-action>
+                    <nz-list-item-action>
+                        <button>
+                            X
+                        </button>
+                    </nz-list-item-action>
+                </ul>
               </ng-container>
             </nz-list-item>
           </nz-list>

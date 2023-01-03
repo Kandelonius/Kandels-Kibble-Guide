@@ -5,7 +5,7 @@ import { User } from '../models/User';
 
 @Injectable()
 export class UserListService {
-  private resourceUrl = 'http://localhost:8000/users';
+  private resourceUrl = 'http://localhost:8000/user';
 
   constructor(private http: HttpClient) {}
 

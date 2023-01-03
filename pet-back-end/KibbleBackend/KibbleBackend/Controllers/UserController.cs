@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 namespace KibbleBackend.Controllers
 {
 
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class UserController : ControllerBase
     {
@@ -19,7 +19,7 @@ namespace KibbleBackend.Controllers
         }
         /* GET: api/<UserController>
          *
-         * https://localhost:7285/api/User
+         * https://localhost:8000/User
          */
         [HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> GetUsers()
@@ -28,7 +28,7 @@ namespace KibbleBackend.Controllers
         }
 
         /* GET api/<UserController>/5
-         * https://localhost:7285/api/User/1
+         * https://localhost:8000/User/1
          */
         [HttpGet("{id}")]
         public async Task<ActionResult<User>> GetUser(int id)
@@ -41,8 +41,8 @@ namespace KibbleBackend.Controllers
             return user;
         }
 
-        /* POST api/<UserController>
-         * https://localhost:7285/api/User
+        /* POST <UserController>
+         * https://localhost:8000/User
          * 
          * {
             "id": 2,
@@ -62,7 +62,7 @@ namespace KibbleBackend.Controllers
         }
 
         /* PUT api/<UserController>/2
-         * https://localhost:7285/api/User/2
+         * https://localhost:8000/User/2
          * 
          * {
             "id": 2,
@@ -100,7 +100,7 @@ namespace KibbleBackend.Controllers
         }
 
         /* DELETE api/<UserController>/2
-         * https://localhost:7285/api/User/2
+         * https://localhost:8000/User/2
          */
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUser(int id)
