@@ -4,7 +4,7 @@
       <div nz-row>
         <div nz-col nzSpan="14" nzOffset="5">
           <h1>Kibble guide users</h1>
-          <app-user-form></app-user-form>
+          <app-user-form [refresh]="this.loadAll"></app-user-form>
           <nz-list nzItemLayout="horizontal">
             <nz-list-item *ngFor="let user of users$ | async">
               <ng-container>
